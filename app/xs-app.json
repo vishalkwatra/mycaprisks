@@ -1,0 +1,10 @@
+{
+  "authenticationMethod": "none",
+  "routes": [
+      {
+          "source": "/RiskService/(.*)",
+          "destination": "srv-api",
+          "csrfProtection": true
+      }
+  ]
+}
