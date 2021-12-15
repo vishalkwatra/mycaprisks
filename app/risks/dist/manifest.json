@@ -11,7 +11,7 @@
         "description": "{{appDescription}}",
         "dataSources": {
             "mainService": {
-                "uri": "RiskService/",
+                "uri": "risk/",
                 "type": "OData",
                 "settings": {
                     "odataVersion": "4.0"

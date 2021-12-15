@@ -21,5 +21,3 @@ builder:
     afterTask: generateCachebusterInfo
     configuration:
       archiveName: nsrisks
-      additionalFiles:
-      - xs-app.json

@@ -1,11 +1,35 @@
 {
-  "authenticationMethod": "none",
-  "routes": [
-    {
-      "source": "/RiskService/(.*)",
-      "destination": "srv-api",
-      "csrfProtection": true
-    }
-  ],
-  "welcomeFile": "/nsrisks"
+    "authenticationMethod": "none",
+    "routes": [
+        {
+            "source": "^/risks/webapp/(.*)$",
+            "target": "$1",
+            "localDir": "risks/webapp/",
+            "authenticationType": "none"
+        },
+        {
+            "source": "^/risk(.*)$",
+            "destination": "srv-api",
+            "csrfProtection": true
+        },
+        {
+            "source": "^/resources/(.*)$",
+            "target": "/resources/$1",
+            "authenticationType": "none",
+            "destination": "ui5"
+        },
+        {
+            "source": "^/test-resources/(.*)$",
+            "target": "/test-resources/$1",
+            "authenticationType": "none",
+            "destination": "ui5"
+        },
+        {
+            "source": "^(.*)$",
+            "target": "$1",
+            "service": "html5-apps-repo-rt",
+            "authenticationType": "xsuaa"
+        }
+    ],
+    "welcomeFile": "/risks/webapp/index.html"
 }
