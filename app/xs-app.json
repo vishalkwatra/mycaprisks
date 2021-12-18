@@ -1,16 +1,17 @@
 {
-    "authenticationMethod": "none",
+    "authenticationMethod": "route",
     "routes": [
         {
             "source": "^/risks/webapp/(.*)$",
             "target": "$1",
             "localDir": "risks/webapp/",
-            "authenticationType": "none"
+            "authenticationType": "xsuaa"
         },
         {
             "source": "^/risk(.*)$",
             "destination": "srv-api",
-            "csrfProtection": true
+            "authenticationType": "xsuaa",
+            "csrfProtection": false
         },
         {
             "source": "^/resources/(.*)$",
